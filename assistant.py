@@ -50,6 +50,7 @@ TOOLS = [
                 "neighborhood": NEIGHBORHOOD,
                 "days": {"type": "integer", "description": "Days to look back (default 14)."},
                 "limit": {"type": "integer", "description": "Max rows (default 10)."},
+                "street": {"type": "string", "description": "Optional street name to narrow results, e.g. '16th St'. No house numbers."},
             },
             "required": ["category", "neighborhood"],
         },
@@ -80,6 +81,15 @@ Rules:
 - Resolution times only include cases that closed, so mention the share closed.
 - Report counts and patterns neutrally. Do not speculate about people or
   draw conclusions about why a neighborhood has more reports.
+  - For duplicate checks, if the person mentions a street or intersection,
+  pass one street name in the street filter. The filter matches street names
+  in the address text. You cannot measure distance, so say so.
+- If total_matching is larger than shown, say the list is partial.
+- If the person gives an intersection, search one of the streets, then look at
+  the addresses for the other street name.
+  - A matching open report at the same location suggests, but does not confirm,
+  that the issue was already reported. Say the person should check the
+  report's details before deciding not to file.
 """
 
 

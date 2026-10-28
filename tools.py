@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
+import re
 
 URL = "https://data.sfgov.org/resource/vw6y-z8j6.json"
 
@@ -44,6 +45,22 @@ def _days_ago(days):
     return moment.strftime("%Y-%m-%dT%H:%M:%S")
 
 
+STREET_WORDS = {
+    "STREET": "ST", "AVENUE": "AVE", "BOULEVARD": "BLVD", "ROAD": "RD",
+    "DRIVE": "DR", "PLACE": "PL", "COURT": "CT", "LANE": "LN",
+    "TERRACE": "TER", "HIGHWAY": "HWY",
+}
+
+
+def _clean_street(street):
+    """Make a street name safe and match how DataSF writes addresses."""
+    cleaned = street.upper().strip().replace("'", "").replace(".", "")
+    if not re.fullmatch(r"[A-Z0-9 -]{2,40}", cleaned):
+        raise ValueError(f"Street name has unusual characters: {street}")
+    words = [STREET_WORDS.get(w, w) for w in cleaned.split()]
+    return " ".join(words)
+
+
 def _get(params):
     resp = requests.get(URL, params=params, timeout=60)
     resp.raise_for_status()
@@ -63,23 +80,39 @@ def count_requests(category, neighborhood, days=30):
             "days": days, "count": int(rows[0]["n"])}
 
 
-def recent_similar_requests(category, neighborhood, days=14, limit=10):
-    """Still-open requests of this type nearby: a duplicate check."""
+def recent_similar_requests(category, neighborhood, days=14, limit=10, street=None):
+    """Still-open requests of this type nearby: a duplicate check.
+    Optionally narrow to one street name."""
     _check(category, neighborhood)
+    days = min(int(days), 365)
+    limit = min(int(limit), 50)
     where = (
         f"service_name = '{category}' "
         f"AND analysis_neighborhood = '{neighborhood}' "
         f"AND status_description = 'Open' "
         f"AND requested_datetime > '{_days_ago(days)}'"
     )
+    if street:
+        s = _clean_street(street)
+        where += (
+            f" AND (upper(address) like '% {s}%' "
+            f"OR upper(address) like '{s}%')"
+        )
+    total = int(_get({"$select": "count(*) as n", "$where": where})[0]["n"])
     rows = _get({
         "$select": "service_request_id, requested_datetime, service_subtype, address",
         "$where": where,
         "$order": "requested_datetime DESC",
         "$limit": limit,
     })
-    return {"category": category, "neighborhood": neighborhood,
-            "open_requests": rows}
+    return {
+        "category": category,
+        "neighborhood": neighborhood,
+        "street_filter": street,
+        "total_matching": total,
+        "shown": len(rows),
+        "open_requests": rows,
+    }
 
 
 def typical_resolution_time(category, neighborhood):
