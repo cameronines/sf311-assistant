@@ -9,7 +9,7 @@ cases usually take to close.
 
 ## Why I built this
 On city cleanup volunteer shifts in San Francisco, we're often told to file
-anything we can't clean up ourselves with 311. Some of these items could range from larger pieces of garbage/furniture, to more dangerous items that are found. Through my volunteering with Civic Joy Fund and conversations with other volunteers, I kept running into the same questions we wished we could answer *before* filing: Has someone already reported this? How long do these usually take? I built this to answer them in plain language.
+anything we can't clean up ourselves with 311. Items we find range from large furniture and bulk garbage to more hazardous things. Through my volunteering with Civic Joy Fund and conversations with other volunteers, I kept running into the same questions we wished we could answer *before* filing: Has someone already reported this? How long do these usually take? I built this to answer them in plain language.
 
 ## What it does
 - **Count** requests by category and neighborhood over a time window
@@ -49,12 +49,22 @@ Question: I want to report garbage near 16th and Mission. Has it already been re
 
 Probably yes. There's an open report at the intersection itself.
 
-Exact match
+**Exact match**
 - Request #202000220330 is for garbage and debris at "Intersection 16th St, Mission St". It was filed 2026-10-25 and is still open.
+
+**Nearby open reports**
+These are other open garbage and debris reports on the same two streets. I can't measure distance, so I can't tell you how close any of them are to your spot.
+- On 16th St, there are 23 open reports in the Mission. My list showed only 10 of them, so it's partial. Most of those 10 were filed 10/24–10/25. The ones with street numbers are in the 2859–2895 16th St block and at 3074 and 2199 16th St. Two more are at 16th St and Potrero Ave.
+- On Mission St, there are 15 open reports, and my list showed all of them. Two are at intersections close to yours: 17th St and Mission St (#202000223406, filed 10/25) and 14th St and Mission St (#202000225470, filed 10/26). Others are at street numbers such as 2208, 2239, 2255, 2294, 2337, 2369 and 2416 Mission St.
+
+**What to do next**
+- If your garbage is at the 16th and Mission corner, the existing report likely covers it. You can reference #202000220330 instead of filing a new one.
+- If it's a bit away from the corner, for example mid-block or at a different address, a new report may be worth filing.
+
+I searched the "Street and Sidewalk Cleaning" category, which is where garbage and debris reports go. If you meant an overflowing public trash can, that falls under "Litter Receptacle Maintenance". I can check that category too, and I can also give you the typical closing time for these reports.
 ...
 ```
 
-(Trimmed for length.)
 </details>
 
 ## Example: closing times
@@ -98,6 +108,8 @@ neutrally without speculating about people or neighborhoods.
 - Medians only include cases that closed.
 - Cases with no neighborhood are excluded from neighborhood questions.
 - Each question is answered independently, with no conversation memory.
+- Results can include street addresses from the public dataset. The tool
+  doesn't collect or store anything about the person asking.
 
 ## Testing
 I wrote 12 test questions covering counts, resolution times, duplicate checks,
@@ -109,6 +121,16 @@ the number in the answer matches a direct query of the data.
 The set is small and written by me. It checks tool choice and counts, but not
 the quality of the written explanations or the accuracy of the resolution-time
 and duplicate-check answers.
+
+
+## Project files
+- `assistant.py`: chat loop and Claude tool definitions
+- `tools.py`: the three data functions, with input validation
+- `eval.py`: the 12-question test set (results in `eval_results.txt`)
+- `explore_311.py`, `check_recent.py`, `list_values.py`: scripts I used to
+  inspect the dataset before designing the tools
+- `test_claude.py`, `test_tools.py`: quick checks while building
+- `NOTES.md`: working notes on the data
 
 ## Setup
 Requires Python 3.9+ and an Anthropic API key.
