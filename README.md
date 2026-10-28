@@ -37,6 +37,17 @@ data that exists. Data comes from DataSF's public 311 dataset.
 - Medians only include cases that closed.
 - Tested manually on a few questions, not yet a full evaluation.
 
+## Testing
+I wrote 12 test questions covering counts, resolution times, duplicate checks,
+and questions the assistant should decline. `eval.py` runs them and checks
+(1) that Claude chose the right tool with the right inputs and (2) for count
+questions, that the number in the answer matches a direct query of the data.
+
+Result: 12/12 passed. Limits: the set is small and written by me; it checks
+tool choice and counts but does not grade the quality of the written
+explanations or the accuracy of resolution-time and duplicate-check answers.
+Results are in `eval_results.txt`.
+
 ## Next steps
 - Search open requests by street name
 - A 15-20 question evaluation set

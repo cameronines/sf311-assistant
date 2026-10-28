@@ -1,0 +1,25 @@
+PASS  Q1: How many public graffiti reports were filed in the Mission in the last 30 days?
+      -> right tool, number matches data (930)
+PASS  Q2: How many noise complaints in the Tenderloin over the past 7 days?
+      -> right tool, number matches data (16)
+PASS  Q3: How many tree maintenance requests were filed in Sunset/Parkside in the last 30 days?
+      -> right tool, number matches data (107)
+PASS  Q4: How many streetlight problems were reported in the Castro in the past 30 days?
+      -> right tool, number matches data (29)
+PASS  Q5: How many sewer requests in the Financial District in the past 14 days?
+      -> right tool, number matches data (9)
+PASS  Q6: How long do street defects usually take to get closed in the Tenderloin?
+      -> right tool and inputs
+PASS  Q7: What's the typical closing time for graffiti reports on public property in the Mission?
+      -> right tool and inputs
+PASS  Q8: I want to report garbage on Valencia Street in the Mission. Has it already been reported?
+      -> right tool and inputs
+PASS  Q9: Is there already a report open for a pothole on Mission Street in the Excelsior?
+      -> right tool and inputs
+PASS  Q10: What's the weather in San Francisco today?
+      -> no tool called
+PASS  Q11: How many 311 requests were filed in Oakland last month?
+      -> no tool called
+PASS  Q12: How many reports were filed recently?
+      -> no tool called
+Score: 12/12

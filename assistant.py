@@ -93,8 +93,9 @@ Rules:
 """
 
 
-def ask(question):
+def ask(question, return_calls=False):
     messages = [{"role": "user", "content": question}]
+    calls = []
 
     for _ in range(6):  # safety limit on back-and-forth
         response = client.messages.create(
@@ -105,8 +106,12 @@ def ask(question):
             messages=messages,
         )
 
+
         if response.stop_reason != "tool_use":
-            return "".join(b.text for b in response.content if b.type == "text")
+            text = "".join(b.text for b in response.content if b.type == "text")
+            return (text, calls) if return_calls else text
+
+
 
         messages.append({"role": "assistant", "content": response.content})
         results = []
@@ -114,6 +119,7 @@ def ask(question):
             if block.type != "tool_use":
                 continue
             print(f"  [tool] {block.name}({block.input})")
+            calls.append((block.name, block.input))
             try:
                 output = TOOL_FUNCTIONS[block.name](**block.input)
                 results.append({"type": "tool_result", "tool_use_id": block.id,
@@ -123,7 +129,8 @@ def ask(question):
                                 "content": f"Error: {err}", "is_error": True})
         messages.append({"role": "user", "content": results})
 
-    return "Sorry, I could not finish that request."
+    msg = "Sorry, I could not finish that request."
+    return (msg, calls) if return_calls else msg
 
 
 if __name__ == "__main__":
