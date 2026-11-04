@@ -1,0 +1,445 @@
+PASS  Q1 [routine] theres a whole couch + mattress dumped on the sidewalk on 24th by the bart
+      -> ok
+PASS  Q2 [routine] poop AGAIN in front of my door on hyde st ugh
+      -> ok
+PASS  Q3 [routine] streetlight out at the corner of fulton and 6th ave, super dark at night
+      -> ok
+PASS  Q4 [routine] huge pothole ate my tire on cesar chavez near folsom
+      -> ok
+PASS  Q5 [routine] public trash can overflowing at the bus stop on geary & fillmore, trash all around it
+      -> ok
+PASS  Q6 [routine] someones car has been parked across my driveway since 7am. 1234 guerrero
+      -> ok
+PASS  Q7 [routine] big tree branch hanging real low over the sidewalk after the storm, dolores near 20th
+      -> ok
+PASS  Q8 [routine] tagging all over the walls of the laundromat on mission and 22nd
+      -> ok
+PASS  Q9 [emergency] guy on the sidewalk not moving, not responding
+      -> ok
+PASS  Q10 [emergency] smells like gas really strong outside on noe st
+      -> ok
+PASS  Q11 [emergency] car crash at van ness and market someone's bleeding
+      -> ok
+PASS  Q12 [not_311] pothole on broadway in oakland near 14th
+      -> ok
+PASS  Q13 [not_311] someone spraypainted the blue mailbox on castro st
+      -> ok
+PASS  Q14 [not_311] trash all over the 101 on-ramp at cesar chavez
+      -> ok
+PASS  Q15 [ambiguous] there's a mess on my street
+      -> ok
+PASS  Q16 [ambiguous] water everywhere
+      -> ok
+PASS  Q17 [ambiguous] something's broken by the park
+      -> ok
+PASS  Q18 [tricky] hay basura y un colchon tirado en la banqueta en la calle 24 y folsom
+      -> ok
+PASS  Q19 [tricky] on valencia & 18th theres a broken streetlight and also a pile of trash bags on the corner
+      -> ok
+PASS  Q20 [tricky] needles on the ground and a woman lying next to them, she doesnt seem to be breathing
+      -> ok
+PASS  Q21 [tricky] my neighbor Dave Kowalski (415-555-0199) keeps leaving his old couch on the sidewalk at 300 lake st
+      -> ok
+Score: 21/21
+
+
+FULL OUTPUTS (for manual review of drafts)
+========================================================================
+Q1 [routine] theres a whole couch + mattress dumped on the sidewalk on 24th by the bart
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Request street or sidewalk cleaning  (in the SF311 app)
+   Form: https://sf.gov/request-street-or-sidewalk-cleaning/
+   Note: To report the act of dumping itself, there is a separate 'Report illegal dumping activity' form; then request cleaning for the items.
+   Why: A couch and mattress dumped on the sidewalk is a request to clean up dumped furniture.
+
+3. What to have ready
+  - Exact location: you said 24th St near BART; add the nearest cross street or address, and which station entrance or side of the street
+  - Type of object: you said a couch and a mattress; note if anything else is there
+  - Photo: suggested, so take one of the items and where they sit on the sidewalk
+  - Contact: email is optional and only used for tracking
+  - Optional: sf.gov has a separate 'Report illegal dumping activity' form if you want to report the act of dumping itself
+
+4. Draft description (edit, then paste into the official form)
+   A couch and a mattress have been dumped on the sidewalk at 24th St near the BART station, [nearest cross street or address]. Please remove the items. [How long they have been there] and [whether they are blocking the walkway].
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q2 [routine] poop AGAIN in front of my door on hyde st ugh
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Request street or sidewalk cleaning  (in the SF311 app)
+   Form: https://sf.gov/request-street-or-sidewalk-cleaning/
+   Note: To report the act of dumping itself, there is a separate 'Report illegal dumping activity' form; then request cleaning for the items.
+   Why: Poop on the sidewalk in front of a door on Hyde St is listed under street and sidewalk cleaning.
+
+3. What to have ready
+  - Exact location: you said in front of your door on Hyde St; add the street number or nearest cross street
+  - Type of object: you said poop; add if you know whether it is animal or human waste, or write 'unknown'
+  - Photo: suggested, so take one if it is safe to do so
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   Feces on the sidewalk in front of [street number] Hyde St, near [nearest cross street]. This has happened before and is a repeat problem at this spot. Please clean the area. [Add the approximate amount and whether it is on the sidewalk or in the street.]
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q3 [routine] streetlight out at the corner of fulton and 6th ave, super dark at night
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+   Note: Downed or sparking power lines are an emergency: call 911.
+
+2. Likely SF311 report type
+   Report a problem with a streetlight  (in the SF311 app)
+   Form: https://sf.gov/report-problem-streetlight/
+   Why: A streetlight that is out and dark at night fits the streetlight report type.
+
+3. What to have ready
+  - Exact location: you said the corner of Fulton St and 6th Ave; add which corner or the nearest address or pole if you can
+  - Type of problem: light is out and the area is very dark at night; add if it flickers or stays on during the day
+  - Type of pole if you can tell: concrete, metal, wooden, or unknown
+  - Photo: not required for this report type
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   The streetlight at the corner of Fulton St and 6th Ave is out, and the area is very dark at night. [Which corner or nearest address or pole number] [Type of pole: concrete, metal, wooden, or unknown] [How long it has been out]
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q4 [routine] huge pothole ate my tire on cesar chavez near folsom
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Report pothole and street issues  (in the SF311 app)
+   Form: https://sf.gov/report-pothole-and-street-issues/
+   Why: A large pothole in the street on Cesar Chavez near Folsom fits the pothole and street issues report.
+
+3. What to have ready
+  - Exact location: you said Cesar Chavez near Folsom; add the nearest street address or cross street and which lane or side of the street
+  - Nature of the problem: large pothole that damaged a tire; add approximate size or depth if you can
+  - Photo: requested; take one from a safe spot off the roadway, not while standing in traffic
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   Large pothole in the roadway on Cesar Chavez St near Folsom St, at [nearest address or cross street] in the [lane or side of street]. It is big enough to have damaged a vehicle tire. Approximate size: [width and depth]. It is a hazard to other vehicles.
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q5 [routine] public trash can overflowing at the bus stop on geary & fillmore, trash all around it
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Report garbage container issues  (in the SF311 app)
+   Form: https://sf.gov/report-garbage-container-issues/
+   Why: An overflowing public garbage can is covered by the garbage container report, even though trash has spilled around it.
+
+3. What to have ready
+  - Exact location: you said the bus stop at Geary & Fillmore; add which corner or side of the street, and any can ID number if visible
+  - What is wrong with the container: overflowing with trash spilling onto the ground around it
+  - Photo: requested; take one showing the can and the trash around it
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   The public garbage can at the bus stop at Geary Blvd and Fillmore St [which corner or side of the street] is overflowing. Trash has spilled onto the ground around the can. Please empty the can and clean up the surrounding litter. [How long it has been like this]
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q6 [routine] someones car has been parked across my driveway since 7am. 1234 guerrero
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Report blocked driveway or illegal parking  (in the SF311 app)
+   Form: https://sf.gov/report-blocked-driveway-or-illegal-parking/
+   Note: If you want the vehicle towed, you must meet the officer.
+   Note: To cancel after the vehicle moves, call 415-695-7200, option 5.
+   Why: A vehicle is parked across the user's driveway, which matches the blocked driveway or illegal parking report.
+
+3. What to have ready
+  - Exact location: you said 1234 Guerrero; confirm the address and the nearest cross street if you can
+  - License plate: missing; enter it in the form's own license plate field
+  - Nature of the problem: you said a car is blocking your driveway
+  - Your name and phone number: required for this report type; have them ready
+  - Photo: not listed for this type, but one of the car across the driveway can help if it is safe to take
+  - If you want the vehicle towed, you must meet the officer; if it moves, call 415-695-7200, option 5 to cancel
+
+4. Draft description (edit, then paste into the official form)
+   A vehicle has been parked across the driveway at 1234 Guerrero St since about 7:00 AM today, blocking access. [Vehicle make, color, and type]. Requesting parking enforcement.
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q7 [routine] big tree branch hanging real low over the sidewalk after the storm, dolores near 20th
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+   Note: Call 911 if the problem involves power lines, vehicles, or buildings.
+
+2. Likely SF311 report type
+   Report a damaged or fallen tree  (in the SF311 app)
+   Form: https://sf.gov/report-damaged-or-fallen-tree/
+   Note: Issues that are not an immediate safety concern, like routine pruning of overgrown trees, are deferred until StreetTreeSF reaches the neighborhood.
+   Why: A large hanging branch over a sidewalk after a storm fits the damaged or fallen tree report, and no power lines, vehicles, or buildings were mentioned.
+
+3. What to have ready
+  - Exact location: you said Dolores St near 20th St; add the nearest address or cross street and which side of the street
+  - Nature of the problem: you said a big branch is hanging low over the sidewalk after the storm; add whether it is still attached and how low it hangs
+  - Safety check: if the branch is touching power lines, a vehicle, or a building, call 911 instead
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   After the recent storm, a large tree branch is hanging low over the sidewalk at Dolores St near 20th St, at [nearest address or cross street, and side of street]. The branch is [still attached or partly broken] and hangs about [height above sidewalk]. It does not appear to be touching [power lines, vehicles, or buildings - confirm before submitting].
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q8 [routine] tagging all over the walls of the laundromat on mission and 22nd
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Report graffiti issues  (in the SF311 app)
+   Form: https://sf.gov/report-graffiti-issues/
+   Why: Tagging on the walls of a building is graffiti, which SF311 handles for both public and private property.
+
+3. What to have ready
+  - Exact location: you said the laundromat at Mission and 22nd; add the street address if you can see it
+  - Object the graffiti is on: you said the laundromat walls; note which sides (front, side, or rear) are affected
+  - Whether it contains racial slurs or profanity: not yet given; add yes or no
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   Tagging on the exterior walls of the laundromat at Mission St and 22nd St, [street address]. The graffiti covers [front/side/rear wall, and how much of the wall]. It [does / does not] contain racial slurs or profanity.
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q9 [emergency] guy on the sidewalk not moving, not responding
+
+
+!! THIS SOUNDS LIKE AN EMERGENCY. CALL 911 NOW.
+   A person who is not moving or responding may need medical help right away, which is an emergency sign.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q10 [emergency] smells like gas really strong outside on noe st
+
+
+!! THIS SOUNDS LIKE AN EMERGENCY. CALL 911 NOW.
+   A strong gas smell is an emergency sign, so call 911 now rather than filing a 311 report.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q11 [emergency] car crash at van ness and market someone's bleeding
+
+
+!! THIS SOUNDS LIKE AN EMERGENCY. CALL 911 NOW.
+   A crash with someone bleeding is an injury emergency that needs 911 right away.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q12 [not_311] pothole on broadway in oakland near 14th
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. This probably isn't an SF311 issue.
+   The problem is outside the City and County of San Francisco (e.g. Oakland, Daly City).
+   Where to go: That city's own public works or 311 service. SF311 cannot act there.
+   Broadway near 14th St in Oakland is outside San Francisco, so SF311 cannot act on it.
+   Not sure? Call 311 (415-701-2311 from outside SF) and describe it to them.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q13 [not_311] someone spraypainted the blue mailbox on castro st
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. This probably isn't an SF311 issue.
+   Graffiti or problems on State or Federal property (for example a USPS mailbox).
+   Where to go: Contact the owning State or Federal agency directly. If you file with 311 anyway, the City will try to forward it and then close the request.
+   Source: https://sf.gov/report-graffiti-issues/
+   A blue mailbox is a USPS (federal) mailbox, and graffiti on State or Federal property is not handled by SF311; contact the owning agency directly. If you file with 311 anyway, the City will try to forward it and then close the request.
+   Not sure? Call 311 (415-701-2311 from outside SF) and describe it to them.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q14 [not_311] trash all over the 101 on-ramp at cesar chavez
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. This probably isn't an SF311 issue.
+   Litter, debris, potholes, graffiti or other issues on a state freeway or freeway ramp (e.g. US-101, I-80, I-280).
+   Where to go: Caltrans Customer Service Request at csr.dot.ca.gov (non-urgent issues)
+   Source: https://dot.ca.gov/programs/maintenance
+   Litter on a US-101 freeway on-ramp is state freeway property, which the reference data refers to Caltrans rather than SF311.
+   Not sure? Call 311 (415-701-2311 from outside SF) and describe it to them.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q15 [ambiguous] there's a mess on my street
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+One question before I can pick a report type:
+   What kind of mess is it (for example loose trash or dumped furniture, an overflowing public garbage can, graffiti, or water or sewage)?
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q16 [ambiguous] water everywhere
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+One question before I can pick a report type:
+   Where is the water coming from or what does it look like (for example a gushing fire hydrant, water pooling in the street, sewage backing up, or a clogged storm drain)?
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q17 [ambiguous] something's broken by the park
+
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+One question before I can pick a report type:
+   What exactly is broken (for example a bench, the sidewalk or curb, a streetlight, or something inside the park like a playground)?
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q18 [tricky] hay basura y un colchon tirado en la banqueta en la calle 24 y folsom
+(Spanish input -> English draft)
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Request street or sidewalk cleaning  (in the SF311 app)
+   Form: https://sf.gov/request-street-or-sidewalk-cleaning/
+   Note: To report the act of dumping itself, there is a separate 'Report illegal dumping activity' form; then request cleaning for the items.
+   Why: Basura suelta y un colchón tirado en la banqueta se reportan como limpieza de calle o banqueta.
+
+3. What to have ready
+  - Ubicación exacta: dijiste 24th St y Folsom St; agrega en qué esquina o frente a qué dirección está
+  - Tipo de objeto: dijiste basura suelta y un colchón; agrega si hay algo más (muebles, carritos, etc.)
+  - Foto: recomendada, si puedes tomarla de forma segura
+  - Contacto: el correo electrónico es opcional (solo para dar seguimiento)
+  - Opcional: si viste a alguien tirando la basura, existe un formulario aparte para reportar tiro ilegal
+
+4. Draft description (edit, then paste into the official form)
+   Loose trash and a mattress have been left on the sidewalk at 24th St and Folsom St, [which corner or nearest address]. Requesting cleaning and removal of the items. [Add whether the items are blocking the sidewalk and how long they have been there.]
+
+5. Confidence: high
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q19 [tricky] on valencia & 18th theres a broken streetlight and also a pile of trash bags on the corner
+(two issues -> handle one, list the other)
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+   Note: Downed or sparking power lines are an emergency: call 911.
+
+2. Likely SF311 report type
+   Report a problem with a streetlight  (in the SF311 app)
+   Form: https://sf.gov/report-problem-streetlight/
+   Why: A broken streetlight at a named intersection fits the streetlight report; the trash bags are a separate cleaning request.
+
+3. What to have ready
+  - Exact location: you said Valencia St & 18th St; add which corner or the nearest address or pole
+  - Type of problem: you said it is broken; add whether it is out, flickering, on all day, or the pole is damaged
+  - Type of pole if you can tell: concrete, metal, wooden, or unknown
+  - Contact: email is optional and only used for tracking
+
+4. Draft description (edit, then paste into the official form)
+   The streetlight at Valencia St and 18th St is broken. [Describe the problem: light out, flickering, on during the day, or pole damaged.] It is located at [which corner or nearest address]. Pole type: [concrete, metal, wooden, or unknown].
+
+5. Confidence: high
+
+You also mentioned (file each as a separate report):
+  - Pile of trash bags at Valencia & 18th corner (street or sidewalk cleaning request)
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q20 [tricky] needles on the ground and a woman lying next to them, she doesnt seem to be breathing
+(emergency wins over 311 issue)
+
+!! THIS SOUNDS LIKE AN EMERGENCY. CALL 911 NOW.
+   A person who may not be breathing is a medical emergency, so call 911 now; the needles can be reported for cleanup afterward.
+   Once everyone is safe, you can also file "Request street or sidewalk cleaning" with 311.
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.
+
+========================================================================
+Q21 [tricky] my neighbor Dave Kowalski (415-555-0199) keeps leaving his old couch on the sidewalk at 300 lake st
+(strip third-party name/phone)
+
+1. Emergency check: no emergency signs found. If anyone is in danger, call 911.
+
+2. Likely SF311 report type
+   Request street or sidewalk cleaning  (in the SF311 app)
+   Form: https://sf.gov/request-street-or-sidewalk-cleaning/
+   Note: To report the act of dumping itself, there is a separate 'Report illegal dumping activity' form; then request cleaning for the items.
+   Why: A couch left on the sidewalk is a bulky item on public property, which fits street and sidewalk cleaning.
+
+3. What to have ready
+  - Exact location: you said 300 Lake St; add the nearest cross street or which side of the street if you can
+  - Type of object: a couch; add its condition and whether anything else is with it
+  - Photo: suggested, so take one of the couch and where it sits on the sidewalk
+  - Contact: email is optional and only used for tracking
+  - Leave the neighbor's name and phone number out of the report
+
+4. Draft description (edit, then paste into the official form)
+   A couch has been left on the sidewalk at 300 Lake St [nearest cross street]. Items have been left in this spot more than once. [Whether the couch blocks the walkway] [how long the current couch has been there].
+
+5. Confidence: high
+
+You also mentioned (file each as a separate report):
+  - Repeated dumping at the same spot can be filed separately on the 'Report illegal dumping activity' form
+
+Unofficial helper, not a City of San Francisco tool. It does not submit reports. Use the SF311 app, sf.gov, or call 311.

@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "retrieved": "2026-11-03",
+    "sources": [
+      "DataSF 311 Cases (vw6y-z8j6): service_name values and volumes, past year",
+      "sf.gov 311 service pages (one source_url per entry)",
+      "dot.ca.gov maintenance page (Caltrans referral)"
+    ],
+    "disclaimer": "Unofficial and not a City of San Francisco tool. The official SF311 app, sf.gov forms, and the 311 phone line are the source of truth.",
+    "curation_rule": "Only facts stated on the linked page. Fields the page does not state are null. Partner agencies are listed as the page lists them; no single owning department is claimed unless the page says so.",
+    "how_to_report": "SF311 mobile app (Android/iOS), the sf.gov form linked in source_url, or call 311 (415-701-2311 from outside San Francisco; TDD/TTY 711)."
+  },
+
+  "service_types": [
+    {
+      "id": "street_sidewalk_cleaning",
+      "title": "Request street or sidewalk cleaning",
+      "datasf_categories": ["Street and Sidewalk Cleaning"],
+      "partner_agencies": ["311 Customer Service Center", "Public Works", "City Administrator"],
+      "plain_words": ["trash", "garbage", "litter", "debris", "couch", "mattress", "furniture", "shopping cart", "dumped stuff", "poop", "human waste", "needles", "syringes", "broken glass"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Type of object (e.g. loose trash, furniture, mattress, shopping cart)"],
+      "photo": "suggested",
+      "contact": "Email optional (only for tracking)",
+      "notes": ["To report the act of dumping itself, there is a separate 'Report illegal dumping activity' form; then request cleaning for the items."],
+      "not_this_if": [
+        {"if": "an overflowing or damaged public garbage can, or a residential bin left out", "use": "garbage_container"},
+        {"if": "your own household bulky items you want picked up", "use_text": "Schedule a Recology Bulky Item Recycling pickup (per the sf.gov page)."}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/request-street-or-sidewalk-cleaning/"
+    },
+    {
+      "id": "garbage_container",
+      "title": "Report garbage container issues",
+      "datasf_categories": ["Litter Receptacle Maintenance"],
+      "partner_agencies": ["Public Works", "311 Customer Service Center"],
+      "plain_words": ["overflowing trash can", "public garbage can", "bin", "toter left out", "trash can full", "trash can broken"],
+      "in_app": true,
+      "have_ready": ["Exact location", "What is wrong with the container (overflowing, spilling, damaged, left out after collection)"],
+      "photo": "requested",
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "street cleaning did not happen on schedule", "use_other_form": "missed_street_cleaning"},
+        {"if": "loose trash or dumped items on the street (not in a container)", "use": "street_sidewalk_cleaning"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-garbage-container-issues/"
+    },
+    {
+      "id": "graffiti",
+      "title": "Report graffiti issues",
+      "datasf_categories": ["Graffiti Public", "Graffiti Private"],
+      "partner_agencies": ["311 Customer Service Center", "Public Works", "Municipal Transportation Agency", "Public Utilities Commission", "Recreation and Park Department", "Fire Department"],
+      "plain_words": ["graffiti", "tagging", "tags", "spray paint", "spraypainted", "vandalism on wall"],
+      "in_app": true,
+      "have_ready": ["Exact location", "The object the graffiti is on", "Whether it contains racial slurs or profanity"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "graffiti on a parking or traffic sign", "use_other_form": "parking_traffic_sign"},
+        {"if": "stickers, posters or flyers rather than paint", "use_other_form": "illegal_postings"},
+        {"if": "it is on State or Federal property (e.g. a USPS mailbox, freeway structure)", "use_not_311": "state_federal_property"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-graffiti-issues/"
+    },
+    {
+      "id": "blocked_driveway_parking",
+      "title": "Report blocked driveway or illegal parking",
+      "datasf_categories": ["Parking Enforcement"],
+      "partner_agencies": ["311 Customer Service Center", "Municipal Transportation Agency"],
+      "plain_words": ["blocking my driveway", "double parked", "parked on the sidewalk", "illegally parked", "tow"],
+      "in_app": true,
+      "have_ready": ["Exact location", "License plate", "Nature of the problem (e.g. blocked driveway, double parking)", "Your name and phone number"],
+      "photo": null,
+      "contact": "Name and phone number needed",
+      "notes": ["If you want the vehicle towed, you must meet the officer.", "To cancel after the vehicle moves, call 415-695-7200, option 5."],
+      "not_this_if": [
+        {"if": "a vehicle parked in one spot more than 72 hours and not blocking a driveway", "use": "abandoned_vehicle"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-blocked-driveway-or-illegal-parking/"
+    },
+    {
+      "id": "abandoned_vehicle",
+      "title": "Report an abandoned vehicle",
+      "datasf_categories": ["Parking Enforcement"],
+      "partner_agencies": ["311 Customer Service Center", "Municipal Transportation Agency"],
+      "plain_words": ["abandoned car", "car hasn't moved", "parked for weeks", "junk car", "abandoned truck", "abandoned motorcycle"],
+      "in_app": true,
+      "have_ready": ["Exact location", "License plate number", "Vehicle description (make, color, type)", "How long it has been there (must be more than 72 hours)"],
+      "photo": "suggested",
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "the vehicle is blocking a driveway", "use": "blocked_driveway_parking"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-abandoned-vehicle/"
+    },
+    {
+      "id": "pothole_street",
+      "title": "Report pothole and street issues",
+      "datasf_categories": ["Street Defect"],
+      "partner_agencies": ["Public Works", "311 Customer Service Center"],
+      "plain_words": ["pothole", "hole in the road", "cracked pavement", "manhole cover missing", "sinkhole", "road damage"],
+      "in_app": true,
+      "have_ready": ["Exact location (street address and nearest cross street)", "Nature of the problem"],
+      "photo": "requested",
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "the problem is on a sidewalk, curb, curb ramp, or public stairway", "use": "curb_sidewalk"},
+        {"if": "it is on a freeway or freeway ramp", "use_not_311": "caltrans_freeway"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-pothole-and-street-issues/"
+    },
+    {
+      "id": "curb_sidewalk",
+      "title": "Report curb and sidewalk problems",
+      "datasf_categories": ["Sidewalk and Curb"],
+      "partner_agencies": ["Public Works", "311 Customer Service Center"],
+      "plain_words": ["cracked sidewalk", "raised sidewalk", "tree roots lifting sidewalk", "broken curb", "curb ramp", "trip hazard", "public stairs broken"],
+      "in_app": true,
+      "have_ready": ["Exact location, with a description of where on the block", "Type of damage"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "something is blocking the sidewalk rather than the sidewalk being damaged", "use": "blocked_sidewalk"},
+        {"if": "the damage is in the street (pothole, pavement)", "use": "pothole_street"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-curb-and-sidewalk-problems/"
+    },
+    {
+      "id": "streetlight",
+      "title": "Report a problem with a streetlight",
+      "datasf_categories": ["Streetlights"],
+      "partner_agencies": ["311 Customer Service Center", "Public Utilities Commission"],
+      "plain_words": ["streetlight out", "light out", "street lamp", "dark street", "light flickering", "light on all day", "light pole damaged"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Type of problem", "Type of pole if you can tell (concrete, metal, wooden, or unknown)"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "it is a traffic signal or pedestrian signal, not a streetlight", "use_other_form": "traffic_signal"}
+      ],
+      "emergency_notes": ["Downed or sparking power lines are an emergency: call 911."],
+      "source_url": "https://sf.gov/report-problem-streetlight/"
+    },
+    {
+      "id": "tree",
+      "title": "Report a damaged or fallen tree",
+      "datasf_categories": ["Tree Maintenance"],
+      "partner_agencies": ["311 Customer Service Center", "Public Works (StreetTreeSF)"],
+      "plain_words": ["fallen tree", "branch down", "hanging branch", "tree blocking sidewalk", "tree leaning", "dead tree"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Nature of the problem (e.g. fallen, hanging limb, blocking sidewalk or street)"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": ["Issues that are not an immediate safety concern, like routine pruning of overgrown trees, are deferred until StreetTreeSF reaches the neighborhood."],
+      "not_this_if": [],
+      "emergency_notes": ["Call 911 if the problem involves power lines, vehicles, or buildings."],
+      "source_url": "https://sf.gov/report-damaged-or-fallen-tree/"
+    },
+    {
+      "id": "sewer_flooding",
+      "title": "Report flooding, water leaks, sewer backup, or odor issues",
+      "datasf_categories": ["Sewer"],
+      "partner_agencies": ["311 Customer Service Center", "Public Utilities Commission", "Public Works", "Recreation and Park Department"],
+      "plain_words": ["flooding", "water pooling", "sewage", "sewer smell", "storm drain clogged", "water leaking from street", "backup"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Type of issue (e.g. water pooling in the street, strong sewage odor)"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [],
+      "emergency_notes": ["If a fire hydrant is damaged, gushing water, or leaking a lot, call 911 immediately."],
+      "source_url": "https://sf.gov/report-flooding-water-leaks-sewer-backup-or-odor-issues/"
+    },
+    {
+      "id": "encampment",
+      "title": "Report homeless encampments",
+      "datasf_categories": ["Encampment"],
+      "partner_agencies": ["311 Customer Service Center", "Homelessness and Supportive Housing", "Public Works", "Public Health", "Police", "Fire", "Emergency Management"],
+      "plain_words": ["tent", "tents", "encampment", "structure on sidewalk"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Description of the tents or structures (describe conditions, not people)", "Your name and phone number", "Photo taken from a safe distance"],
+      "photo": "requested (taken from a safe distance)",
+      "contact": "Name and phone number listed as needed",
+      "notes": ["For concerns about an unhoused person who is not in an encampment, sf.gov has a separate request for service."],
+      "not_this_if": [
+        {"if": "a person or tent is blocking an entrance or the sidewalk", "use_not_311": "sfpd_non_emergency"}
+      ],
+      "emergency_notes": ["If someone needs medical help right away, or is hurting themselves or others, call 911."],
+      "source_url": "https://sf.gov/report-homeless-encampments/"
+    },
+    {
+      "id": "noise",
+      "title": "Report a noise problem",
+      "datasf_categories": ["Noise"],
+      "partner_agencies": ["311 Customer Service Center", "Department of Public Health", "Department of Building Inspection", "Entertainment Commission", "Municipal Transportation Agency", "Department of Emergency Management"],
+      "plain_words": ["noise", "loud music", "construction noise at night", "loud party", "leaf blower", "amplified sound"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Type of noise", "Description of the noise (when it happens, how long)"],
+      "photo": null,
+      "contact": "Email optional (only for tracking)",
+      "notes": ["Persistent noise from a neighbor or business: sf.gov suggests Community Boards (communityboards.org).", "Noise in an apartment building may be the landlord's responsibility; sf.gov points to the Rent Board."],
+      "not_this_if": [
+        {"if": "noise is happening right now and violates the noise ordinance", "use_not_311": "sfpd_non_emergency"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-noise-problem/"
+    },
+    {
+      "id": "blocked_sidewalk",
+      "title": "Report a blocked pedestrian walkway or sidewalk",
+      "datasf_categories": ["Blocked Street and Sidewalk"],
+      "partner_agencies": ["311 Customer Service Center", "Municipal Transportation Agency", "Public Works"],
+      "plain_words": ["sidewalk blocked", "can't get through", "construction equipment on sidewalk", "dumpster on sidewalk", "news rack blocking", "shrub blocking sidewalk"],
+      "in_app": true,
+      "have_ready": ["Exact location", "The object blocking the walkway (e.g. construction equipment, news rack, shrub)"],
+      "photo": "requested",
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "a person is blocking an entrance or leaving less than 6 ft of sidewalk clearance (sf.gov says do not submit a report)", "use_not_311": "sfpd_non_emergency"},
+        {"if": "a Bay Wheels bikeshare bike is parked badly or blocking", "use_other_form": "bikeshare"},
+        {"if": "restaurant or bar outdoor seating is blocking", "use_other_form": "shared_spaces"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-blocked-pedestrian-walkway-or-sidewalk/"
+    },
+    {
+      "id": "damaged_public_property",
+      "title": "Report damaged public property",
+      "datasf_categories": ["Damage Property"],
+      "partner_agencies": ["311 Customer Service Center", "Public Works", "Municipal Transportation Agency", "Recreation and Park Department"],
+      "plain_words": ["broken bench", "bus shelter glass broken", "parking meter broken", "bike rack damaged", "public toilet broken", "kiosk", "safe-hit post knocked over", "callbox"],
+      "in_app": true,
+      "have_ready": ["Exact location", "Type of object (bench, bike rack, callbox, kiosk, public toilet, news rack, parking meter, safe-hit post, transit shelter)", "Object ID number if there is one", "Description of the damage"],
+      "photo": "suggested (of the damage and where it is)",
+      "contact": "Email optional (only for tracking)",
+      "notes": [],
+      "not_this_if": [
+        {"if": "a broken traffic signal", "use_other_form": "traffic_signal"},
+        {"if": "a damaged parking or traffic sign", "use_other_form": "parking_traffic_sign"},
+        {"if": "graffiti on the object (not physical damage)", "use": "graffiti"}
+      ],
+      "emergency_notes": [],
+      "source_url": "https://sf.gov/report-damaged-public-property/"
+    }
+  ],
+
+  "other_311_forms": [
+    {"id": "illegal_dumping", "title": "Report illegal dumping activity", "url": "https://sf.gov/report-illegal-dumping-activity/"},
+    {"id": "missed_street_cleaning", "title": "Report a missed street cleaning route", "url": "https://sf.gov/report-missed-street-cleaning-route/"},
+    {"id": "illegal_postings", "title": "Report illegal postings and flyers", "url": "https://sf.gov/report-illegal-postings-and-flyers/"},
+    {"id": "parking_traffic_sign", "title": "Report an issue with a parking or traffic sign", "url": "https://sf.gov/report-issue-parking-or-traffic-sign/"},
+    {"id": "traffic_signal", "title": "Report a broken or malfunctioning traffic signal (sf.gov says call 311 for quicker response)", "url": "https://sf.gov/report-broken-or-malfunctioning-traffic-signal/"},
+    {"id": "bikeshare", "title": "Report a bikeshare parking issue", "url": "https://sf.gov/report-bikeshare-parking-issue/"},
+    {"id": "abandoned_bicycle", "title": "Report an abandoned bicycle", "url": "https://sf.gov/report-abandoned-bicycle/"},
+    {"id": "shared_spaces", "title": "Report a violation of sidewalk or parking lane use by businesses", "url": "https://sf.gov/report-violation-sidewalk-or-parking-lane-use/"},
+    {"id": "parks", "title": "Submit a parks related request (problems inside a park, playground, or rec facility)", "url": "https://sf.gov/submit-parks-related-request/"},
+    {"id": "residential_building", "title": "Report a residential building concern (living conditions, SROs)", "url": "https://sf.gov/report-residential-building-concern/"},
+    {"id": "muni_feedback", "title": "Give feedback to Muni", "url": "https://sf.gov/give-feedback-muni/"}
+  ],
+
+  "not_311": [
+    {
+      "id": "sfpd_non_emergency",
+      "situation": "A person blocking an entrance or the sidewalk, or ongoing noise that violates the noise ordinance (not life-threatening)",
+      "go_to": "SFPD non-emergency line: 415-553-0123",
+      "source_url": "https://sf.gov/report-blocked-pedestrian-walkway-or-sidewalk/"
+    },
+    {
+      "id": "caltrans_freeway",
+      "situation": "Litter, debris, potholes, graffiti or other issues on a state freeway or freeway ramp (e.g. US-101, I-80, I-280)",
+      "go_to": "Caltrans Customer Service Request at csr.dot.ca.gov (non-urgent issues)",
+      "source_url": "https://dot.ca.gov/programs/maintenance"
+    },
+    {
+      "id": "state_federal_property",
+      "situation": "Graffiti or problems on State or Federal property (for example a USPS mailbox)",
+      "go_to": "Contact the owning State or Federal agency directly. If you file with 311 anyway, the City will try to forward it and then close the request.",
+      "source_url": "https://sf.gov/report-graffiti-issues/"
+    },
+    {
+      "id": "outside_sf",
+      "situation": "The problem is outside the City and County of San Francisco (e.g. Oakland, Daly City)",
+      "go_to": "That city's own public works or 311 service. SF311 cannot act there.",
+      "source_url": null
+    }
+  ],
+
+  "emergency_signs": [
+    "someone unresponsive, not breathing, seriously injured, or needing medical help right away",
+    "someone hurting themselves or others, or a crime in progress",
+    "fire or smoke",
+    "a strong gas smell",
+    "downed or sparking power lines, or a tree on power lines, vehicles, or buildings",
+    "a fire hydrant damaged, gushing, or leaking a lot",
+    "a crash with injuries"
+  ]
+}

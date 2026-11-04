@@ -4,8 +4,10 @@ A plain-language assistant for community volunteers to explore San Francisco
 311 data: how many reports exist, what's already open nearby, and how long
 cases usually take to close.
 
-> Personal prototype. Not affiliated with the City of San Francisco or Civic
-> Joy Fund. Data comes from DataSF's public 311 dataset.
+> Personal prototype. **Not an official City of San Francisco tool**, and not
+> affiliated with the City or Civic Joy Fund. It never submits reports: the
+> SF311 app, sf.gov, and the 311 phone line are the source of truth. Data comes
+> from DataSF's public 311 dataset and public sf.gov service pages.
 
 ## Why I built this
 On city cleanup volunteer shifts in San Francisco, we're often told to file
@@ -79,6 +81,53 @@ the remaining 10% aren't reflected in it. "Closed" means the city closed the
 case, not necessarily that the defect was fixed.
 ```
 
+## Report-prep helper (`reporter.py`)
+A second tool for people who are about to file. Describe a problem in your
+own words and it returns:
+
+1. **Emergency check first.** If it sounds urgent, it says to call 911 and stops.
+2. **Likely SF311 report type** with a link to the official form, or where
+   to go instead if it isn't a 311 issue (outside SF, freeways, federal
+   property like mailboxes, SFPD non-emergency).
+3. **What to have ready**: location, photo, whether contact info is needed.
+4. **A draft description** to edit and paste into the official form. Missing
+   details are left as `[placeholders]`. It describes conditions, not people,
+   and leaves out other people's names and phone numbers.
+5. **"I'm not sure, call 311"** when confidence is low. If the problem is too
+   vague, it asks one clarifying question.
+
+```
+Problem: theres a whole couch + mattress dumped on the sidewalk on 24th by the bart
+
+2. Likely SF311 report type
+   Request street or sidewalk cleaning  (in the SF311 app)
+   Form: https://sf.gov/request-street-or-sidewalk-cleaning/
+3. What to have ready
+  - Exact location: you said 24th St by BART; add the nearest cross street or address
+  - Photo: suggested
+  ...
+4. Draft description (edit, then paste into the official form)
+   A couch and a mattress have been dumped on the sidewalk on 24th St near the
+   BART station, at [nearest cross street or address]. Please remove the items.
+```
+
+**How it's grounded.** `data/service_types.json` holds 14 common report
+types, curated by hand from public sf.gov 311 pages. Each entry has a
+`source_url`, and anything a page doesn't state is left empty instead of
+guessed. Each type maps to real DataSF `service_name` values, which is checked
+when the program loads. The model's output uses structured outputs with
+`enum`s over those ids, so it can't invent a category. A small keyword check
+adds a "call 911" line if the model misses an obvious emergency.
+
+**Testing.** `eval_report.py` runs 21 messy inputs: routine reports,
+emergencies, non-311 problems, vague descriptions, Spanish input, two issues
+in one message, and input that contains a neighbor's name and phone number. It
+checks triage, report type, the emergency banner, that there's exactly one
+clarifying question, that the location appears in the draft, and that no
+third-party personal info gets through. **Result: 21/21** on two runs (November
+2026). Full outputs, including every draft, are in `eval_report_results.txt`.
+I wrote both the cases and the prompt, so this is a smoke test, not proof.
+
 ## How it works
 Claude is given three fixed tools instead of writing its own queries. Category
 and neighborhood are restricted to lists of values I pulled from the dataset,
@@ -125,6 +174,9 @@ and duplicate-check answers.
 
 ## Project files
 - `assistant.py`: chat loop and Claude tool definitions
+- `reporter.py`: report-prep helper (emergency check, report type, checklist, draft)
+- `data/service_types.json`: curated SF311 report types with sf.gov sources
+- `eval_report.py`: 21-case eval for the report helper (results in `eval_report_results.txt`)
 - `tools.py`: the three data functions, with input validation
 - `eval.py`: the 12-question test set (results in `eval_results.txt`)
 - `explore_311.py`, `check_recent.py`, `list_values.py`: scripts I used to
@@ -143,6 +195,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 echo "ANTHROPIC_API_KEY=your-key-here" > .env
 python assistant.py     # interactive questions
+python reporter.py      # report-prep helper
+python eval_report.py   # run the report-helper eval
 python eval.py          # run the test set
 ```
 
